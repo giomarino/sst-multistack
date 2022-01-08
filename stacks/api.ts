@@ -14,13 +14,13 @@ export default class ApiStack extends sst.Stack {
         "GET /": {
           handler: "src/lambda.handler",
           environment: {
-            // If you comment the line below it works
             TABLE_NAME: props?.table.tableName as string
           }
         }
       }
     });
-
+    
+    // If comment the line below it works
     props?.auth.attachPermissionsForAuthUsers([api])
   }
 }
